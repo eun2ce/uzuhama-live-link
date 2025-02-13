@@ -40,10 +40,15 @@ jobs:
     - name: Check if readme.md was updated
       run: git status
 
+    - name: Configure Git
+      run: |
+        git config --local user.email "eun2ce@github.com"
+        git config --local user.name "eun2ce"
+
     - name: Commit updated readme
       run: |
         git add .
-        git commit -m "docs: 새로운 실시간 방송 링크 추가"
+        git commit -m "docs: 새로운 실시간 방송 링크 추가" || echo "No changes to commit"
         git push origin main
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
