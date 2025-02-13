@@ -33,6 +33,6 @@ jobs:
         run: |
           git config --global user.name "${{ github.actor }}
           git config --global user.email "${{ github.actor }}
-          git add live_stream.md
+          git add markdown.md
           git diff --quiet || git commit -m "Update live stream status"
           git push
