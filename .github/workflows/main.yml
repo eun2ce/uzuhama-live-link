@@ -1,0 +1,38 @@
+name: YouTube Live Stream Watcher
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'  # 5분마다 실행 (원하는 주기로 수정 가능)
+  workflow_dispatch:  # 수동으로 실행 가능
+
+jobs:
+  update-live-link:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install requests
+
+      - name: Run YouTube Live Check and Update Markdown
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}  # 환경변수로 API 키 설정
+          YOUTUBE_CHANNEL_ID: ${{ secrets.YOUTUBE_CHANNEL_ID }}  # 환경변수로 채널 ID 설정
+        run: |
+          python check_live_stream.py  # 유튜브 스트리밍 상태 확인 스크립트 실행
+
+      - name: Commit changes if necessary
+        run: |
+          git config --global user.name 'Your Name'
+          git config --global user.email 'your-email@example.com'
+          git add live_stream.md
+          git diff --quiet || git commit -m "Update live stream status"
+          git push
