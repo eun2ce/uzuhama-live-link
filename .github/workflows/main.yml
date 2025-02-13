@@ -37,12 +37,12 @@ jobs:
     - name: Run script to update README
       run: python uzuhama_live_link.py
 
-    - name: Check if README.md was updated
+    - name: Check if readme.md was updated
       run: git status
 
-    - name: Commit updated README
+    - name: Commit updated readme
       run: |
-        git add README.md
+        git add readme.md
         git diff --quiet || (git commit -m "docs: 새로운 실시간 방송 링크 추가" && git push)
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
