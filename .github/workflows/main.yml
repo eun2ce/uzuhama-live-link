@@ -31,8 +31,5 @@ jobs:
     - name: Commit updated README
       run: |
         git add readme.md
-        git diff  # 확인용, 실제로 변경 사항이 있다면 표시됩니다
-        git config --local user.email "eun2ce@github.com"
-        git config --local user.name "eun2ce"
-        git commit -m "docs: 새로운 실시간 방송 링크 추가" || echo "No changes to commit"
-        git push
+        git diff --quiet || (git commit -m "docs: 새로운 실시간 방송 링크 추가" && git push)
+        
