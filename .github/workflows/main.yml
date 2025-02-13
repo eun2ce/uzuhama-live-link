@@ -1,49 +1,35 @@
 name: YouTube Live Stream Watcher
 
 on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
   schedule:
-    - cron: '*/1 * * * *'  # 5분마다 실행 (원하는 주기로 수정 가능)
-    # - cron: '/0 * * * *' # 1시간
-
-  workflow_dispatch:  # 수동으로 실행 가능
+    # - cron: "0 0 */1 * *" # 매일
+    - cron: "*/1 * * * *" # 1분마다
 
 jobs:
-  update-live-link:
+  build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Check out repository
-        uses: actions/checkout@v2
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}  # GITHUB_TOKEN을 사용하여 체크아웃
-
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.x'
-
-      - name: Install dependencies
-        run: |
-          pip install requests
-
-      - name: Run YouTube Live Check and Update Markdown
-        env:
-          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}  # GitHub Secrets에서 API 키 설정
-          YOUTUBE_CHANNEL_ID: ${{ secrets.YOUTUBE_CHANNEL_ID }}  # GitHub Secrets에서 채널 ID 설정
-        run: |
-          python uzuhama_live_link.py  # 유튜브 실시간 방송 체크 및 Markdown 업데이트 스크립트 실행
-
-      - name: Set up GitHub Token for authentication
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # GitHub에서 자동 제공하는 Token
-        run: |
-          git config --global user.name "eun2ce"
-          git config --global user.email "eun2ce@users.noreply.github.com"
-          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git  # GitHub Token으로 인증
-
-      - name: Check status and add changes
-        run: |
-          git status  # 파일이 존재하는지 확인
-          git add readme.md  # 파일 이름을 대소문자 확인 후 수정
-          git diff --quiet || git commit -m "Update live stream URL"
-          git push
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.7
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.7'
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install requests
+    - name: Update README
+      run: |
+        python uzuhama_live_link.py
+    - name: Commit README
+      run: |
+        git add .
+        git diff
+        git config --local user.email "eun2ce@gihtub.com"
+        git config --local user.name "eun2ce"
+        git commit -m "docs: 새로운 실시간 방송 링크 추가"
+        git push
