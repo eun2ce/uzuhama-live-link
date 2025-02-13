@@ -5,7 +5,6 @@ API_KEY = os.getenv('YOUTUBE_API_KEY')
 CHANNEL_ID = os.getenv('YOUTUBE_CHANNEL_ID')
 URL = f'https://www.googleapis.com/youtube/v3/search?part=snippet&channelId={CHANNEL_ID}&eventType=live&type=video&key={API_KEY}'
 
-print("CHANNEL_ID >>", CHANNEL_ID)
 # Markdown 파일 경로
 markdown_file = "readme.md"
 
