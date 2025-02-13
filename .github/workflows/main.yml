@@ -6,30 +6,43 @@ on:
   pull_request:
     branches: [ main ]
   schedule:
-    # - cron: "0 0 */1 * *" # 매일
-    - cron: "*/1 * * * *" # 1분마다
+    - cron: "*/1 * * * *"  # 1분마다 실행
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+      YOUTUBE_CHANNEL_ID: ${{ secrets.YOUTUBE_CHANNEL_ID }}
+
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
     - name: Set up Python 3.11
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v3
       with:
         python-version: '3.11'
+
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install requests
+        pip install requests python-dotenv
+
+    - name: Debug environment variables
+      run: |
+        echo "YOUTUBE_API_KEY=${{ secrets.YOUTUBE_API_KEY }}"
+        echo "YOUTUBE_CHANNEL_ID=${{ secrets.YOUTUBE_CHANNEL_ID }}"
+
     - name: Run script to update README
-      run: |
-        python uzuhama_live_link.py
-    - name: Check if README was updated
-      run: |
-        git status
+      run: python uzuhama_live_link.py
+
+    - name: Check if README.md was updated
+      run: git status
+
     - name: Commit updated README
       run: |
-        git add readme.md
+        git add README.md
         git diff --quiet || (git commit -m "docs: 새로운 실시간 방송 링크 추가" && git push)
-        
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
