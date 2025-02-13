@@ -3,6 +3,8 @@ name: YouTube Live Stream Watcher
 on:
   schedule:
     - cron: '*/1 * * * *'  # 5분마다 실행 (원하는 주기로 수정 가능)
+    # - cron: '/0 * * * *' # 1시간
+
   workflow_dispatch:  # 수동으로 실행 가능
 
 jobs:
