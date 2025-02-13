@@ -48,7 +48,7 @@ jobs:
     - name: Commit updated readme
       run: |
         git add .
-        git commit -m "docs: 새로운 실시간 방송 링크 추가" || echo "No changes to commit"
+        git commit -m "docs: ${COMMIT_DATE} 실방 링크 추가" || echo "No changes to commit"
         git push origin main
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
