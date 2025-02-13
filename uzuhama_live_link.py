@@ -19,6 +19,6 @@ if 'items' in data and len(data['items']) > 0:
     if data['items'][0]['snippet']['liveBroadcastContent'] == 'live':
         current_datetime = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         with open(markdown_file, "a") as f:
-            f.write(f"- {current_datetime} [live_stream_url]({live_stream_url})\n")
+            f.write(f"- {current_datetime} [{live_stream_url}]({live_stream_url})\n")
 else:
     print("No live stream currently.")
