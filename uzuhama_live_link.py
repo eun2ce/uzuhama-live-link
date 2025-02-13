@@ -1,5 +1,6 @@
 import os
 import requests
+from datetime import datetime
 
 API_KEY = os.getenv('YOUTUBE_API_KEY')
 CHANNEL_ID = os.getenv('YOUTUBE_CHANNEL_ID')
@@ -16,7 +17,8 @@ if 'items' in data and len(data['items']) > 0:
     live_stream_url = f'https://www.youtube.com/watch?v={video_id}'
 
     if data['items'][0]['snippet']['liveBroadcastContent'] == 'live':
+        current_datetime = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         with open(markdown_file, "a") as f:
-            f.write(f"{live_stream_url}\n")
+            f.write(f"- {current_datetime} [live_stream_url]({live_stream_url})\n")
 else:
     print("No live stream currently.")
