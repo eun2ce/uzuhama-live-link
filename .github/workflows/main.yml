@@ -6,8 +6,8 @@ on:
   pull_request:
     branches: [ main ]
   schedule:
-    # - cron: "* */6 * * *"  # 6시간마다 실행
-    - cron: "*/1 * * * *"
+    # - cron: "* */3 * * *"  # 6시간마다 실행
+    # - cron: "*/1 * * * *"
 
 
 jobs:
