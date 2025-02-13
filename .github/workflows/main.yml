@@ -16,7 +16,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.11'
+          python-version: '3.x'
 
       - name: Install dependencies
         run: |
@@ -24,15 +24,15 @@ jobs:
 
       - name: Run YouTube Live Check and Update Markdown
         env:
-          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}  # 환경변수로 API 키 설정
-          YOUTUBE_CHANNEL_ID: ${{ secrets.YOUTUBE_CHANNEL_ID }}  # 환경변수로 채널 ID 설정
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          YOUTUBE_CHANNEL_ID: ${{ secrets.YOUTUBE_CHANNEL_ID }}
         run: |
-          python check_live_stream.py  # 유튜브 스트리밍 상태 확인 스크립트 실행
+          python uzuhama_live_link.py
 
       - name: Commit changes if necessary
         run: |
-          git config --global user.name "${{ github.actor }}
-          git config --global user.email "${{ github.actor }}
-          git add markdown.md
-          git diff --quiet || git commit -m "Update live stream status"
+          git config --global user.name "${{ github.actor }}"
+          git config --global user.email "${{ github.actor }}@users.noreply.github.com"
+          git add readme.md
+          git diff --quiet || git commit -m "Update live stream URL"
           git push
