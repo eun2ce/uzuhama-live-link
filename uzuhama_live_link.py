@@ -11,7 +11,7 @@ URL = f'https://www.googleapis.com/youtube/v3/search?part=snippet&channelId={CHA
 markdown_file = "readme.md"
 
 # 현재 날짜와 시간을 포맷에 맞게 가져오기
-current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+current_date = datetime.now().strftime('%Y-%m-%d')
 
 response = requests.get(URL)
 data = response.json()
