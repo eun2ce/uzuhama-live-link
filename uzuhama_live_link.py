@@ -15,7 +15,7 @@ current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
 response = requests.get(URL)
 data = response.json()
-print(f"data: {data}")
+print(f"data: {data}") 
 
 if 'items' in data and len(data['items']) > 0:
     video_id = data['items'][0]['id']['videoId']
