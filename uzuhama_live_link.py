@@ -15,10 +15,12 @@ current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
 response = requests.get(URL)
 data = response.json()
+print(f"data: {data}")
 
 if 'items' in data and len(data['items']) > 0:
     video_id = data['items'][0]['id']['videoId']
     live_stream_url = f'https://www.youtube.com/watch?v={video_id}'
+    print(f"live_strean_url: {live_stream_url}")
 
     if data['items'][0]['snippet']['liveBroadcastContent'] == 'live':
         # readme.md 파일이 없으면 생성 후 읽기
