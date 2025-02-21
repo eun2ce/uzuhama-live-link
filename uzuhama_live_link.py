@@ -29,24 +29,14 @@ if 'items' in data and len(data['items']) > 0:
         with open(markdown_file, "r") as f:
             content = f.readlines()
 
-        # 링크가 이미 존재하는지 확인
-        link_found = False
-        for i, line in enumerate(content):
-            if live_stream_url in line:
-                # 이미 존재하는 링크에 시간만 추가
-                existing_times = line.split(" ")[0]  # 날짜 부분만 추출
-                new_line = f"{existing_times}, {current_time} {live_stream_url}\n"
-                content[i] = new_line
-                link_found = True
+        # 기존 날짜에 동일한 URL이 있는지 확인
+        for line in content:
+            if line.strip() == f"{live_stream_url} - {current_date}":
+                print("Live stream URL already exists for today. Skipping update.")
                 break
-
-        # 새로운 링크가 없으면 새로운 항목 추가
-        if not link_found:
-            content.append(f"{current_time} {live_stream_url}\n")
-
-        # 파일에 다시 저장
-        with open(markdown_file, "w") as f:
-            f.writelines(content)
-
+        else:
+            # 새로운 항목 추가 (라인 바이 라인)
+            with open(markdown_file, "a") as f:
+                f.write(f"{live_stream_url} - {current_date}\n")
 else:
     print("No live stream currently.")
