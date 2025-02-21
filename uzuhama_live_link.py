@@ -31,12 +31,12 @@ if 'items' in data and len(data['items']) > 0:
 
         # 기존 날짜에 동일한 URL이 있는지 확인
         for line in content:
-            if line.strip() == f"{live_stream_url} - {current_date}":
+            if line.strip() == f"- {live_stream_url} - {current_date}":
                 print("Live stream URL already exists for today. Skipping update.")
                 break
         else:
-            # 새로운 항목 추가 (라인 바이 라인)
+            # 새로운 항목을 Markdown 리스트 형식으로 추가
             with open(markdown_file, "a") as f:
-                f.write(f"{live_stream_url} - {current_date}\n")
+                f.write(f"- {live_stream_url} - {current_date}\n")
 else:
     print("No live stream currently.")
