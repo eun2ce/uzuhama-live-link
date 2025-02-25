@@ -1,5 +1,3 @@
-# 2025 년도 우주하마 생방송
-
 | Date       | Live Stream URL                                      |
 |------------|------------------------------------------------------|
 | 2025-02-23 | [https://www.youtube.com/watch?v=vtrJqmPcsF8](https://www.youtube.com/watch?v=vtrJqmPcsF8) |
