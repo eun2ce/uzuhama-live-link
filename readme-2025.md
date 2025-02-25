@@ -1,0 +1,30 @@
+# 2025 년도 우주하마 생방송
+
+| Date       | Live Stream URL                                      |
+|------------|------------------------------------------------------|
+| 2025-02-23 | [https://www.youtube.com/watch?v=vtrJqmPcsF8](https://www.youtube.com/watch?v=vtrJqmPcsF8) |
+| 2025-02-20 | [https://www.youtube.com/watch?v=1wgn-1pRmTs](https://www.youtube.com/watch?v=1wgn-1pRmTs) |
+| 2025-02-18 | [https://www.youtube.com/watch?v=suIaMq1BH3U](https://www.youtube.com/watch?v=suIaMq1BH3U) |
+| 2025-02-16 | [https://www.youtube.com/watch?v=DIKkqTbpVIE](https://www.youtube.com/watch?v=DIKkqTbpVIE) |
+| 2025-02-12 | [https://www.youtube.com/watch?v=aFNLfpqTgyw](https://www.youtube.com/watch?v=aFNLfpqTgyw) |
+| 2025-02-11 | [https://www.youtube.com/watch?v=ndt_9u4T6Ew](https://www.youtube.com/watch?v=ndt_9u4T6Ew) |
+| 2025-02-09 | [https://www.youtube.com/watch?v=bNSPbAo7vYY](https://www.youtube.com/watch?v=bNSPbAo7vYY) |
+| 2025-02-08 | [https://www.youtube.com/watch?v=GSLPyFUy93U](https://www.youtube.com/watch?v=GSLPyFUy93U) |
+| 2025-02-05 | [https://www.youtube.com/watch?v=R9w-NWsz3BM](https://www.youtube.com/watch?v=R9w-NWsz3BM) |
+| 2025-02-02 | [https://www.youtube.com/watch?v=T5rERyf3vCw](https://www.youtube.com/watch?v=T5rERyf3vCw) |
+| 2025-01-31 | [https://www.youtube.com/watch?v=Q-x95IwccHo](https://www.youtube.com/watch?v=Q-x95IwccHo) |
+| 2025-01-29 | [https://www.youtube.com/watch?v=tfq5U6xJO-g](https://www.youtube.com/watch?v=tfq5U6xJO-g) |
+| 2025-01-28 | [https://www.youtube.com/watch?v=xkBLp2hXydo](https://www.youtube.com/watch?v=xkBLp2hXydo) |
+| 2025-01-26 | [https://www.youtube.com/watch?v=7dopOTwWIG4](https://www.youtube.com/watch?v=7dopOTwWIG4) |
+| 2025-01-23 | [https://www.youtube.com/watch?v=HR8Ej1p2YvM](https://www.youtube.com/watch?v=HR8Ej1p2YvM) |
+| 2025-01-21 | [https://www.youtube.com/watch?v=0YwK-yeKMEI](https://www.youtube.com/watch?v=0YwK-yeKMEI) |
+| 2025-01-20 | [https://www.youtube.com/watch?v=NK6LGMRip4c](https://www.youtube.com/watch?v=NK6LGMRip4c) |
+| 2025-01-16 | [https://www.youtube.com/watch?v=SzL3tylCQQI](https://www.youtube.com/watch?v=SzL3tylCQQI) |
+| 2025-01-15 | [https://www.youtube.com/watch?v=v9zDOnBecWg](https://www.youtube.com/watch?v=v9zDOnBecWg) |
+| 2025-01-14 | [https://www.youtube.com/watch?v=Et_UCvhW7Ig](https://www.youtube.com/watch?v=Et_UCvhW7Ig) |
+| 2025-01-12 | [https://www.youtube.com/watch?v=dBMO-MnI_nE](https://www.youtube.com/watch?v=dBMO-MnI_nE) |
+| 2025-01-08 | [https://www.youtube.com/watch?v=qUV8qmCDYkA](https://www.youtube.com/watch?v=qUV8qmCDYkA) |
+| 2025-01-08 | [https://www.youtube.com/watch?v=qUV8qmCDYkA](https://www.youtube.com/watch?v=qUV8qmCDYkA) |
+| 2025-01-07 | [https://www.youtube.com/watch?v=iIiuuyr7x8c](https://www.youtube.com/watch?v=iIiuuyr7x8c) |
+| 2025-01-06 | [https://www.youtube.com/watch?v=lJkldBuvvq0](https://www.youtube.com/watch?v=lJkldBuvvq0) |
+| 2025-01-05 | [https://www.youtube.com/watch?v=BmGlu6eoiPw](https://www.youtube.com/watch?v=BmGlu6eoiPw) |
