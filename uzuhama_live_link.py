@@ -10,7 +10,6 @@ URL = f'https://www.googleapis.com/youtube/v3/search?part=snippet&channelId={CHA
 current_date = datetime.now().strftime('%Y-%m-%d')
 current_year = datetime.now().strftime('%Y')
 
-# 년도별 readme 파일 생성 (예: readme-2025.md)
 markdown_file = f"readme-{current_year}.md"
 
 response = requests.get(URL)
