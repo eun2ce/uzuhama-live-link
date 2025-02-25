@@ -1,5 +1,3 @@
-# 2023 년도 우주하마 생방송
-
 | Date       | Live Stream URL                                      |
 |------------|------------------------------------------------------|
 | 2023-12-31 | [https://www.youtube.com/watch?v=d0EPp6jISzE](https://www.youtube.com/watch?v=d0EPp6jISzE) |
