@@ -1,5 +1,3 @@
-# 2022 년도 우주하마 생방송
-
 | Date       | Live Stream URL                                      |
 |------------|------------------------------------------------------|
 | 2022-12-29 | [https://www.youtube.com/watch?v=vTYJh94gGDo](https://www.youtube.com/watch?v=vTYJh94gGDo) |
