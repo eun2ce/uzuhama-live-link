@@ -1,0 +1,37 @@
+name: Update README
+
+on:
+  push:
+    paths:
+      - 'readme-*.md'   # 새로운 readme-YYYY.md 파일이 추가될 때만 실행됩니다.
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Update README.md
+        run: |
+          # 현재 연도를 가져옵니다.
+          current_year=$(date +'%Y')
+
+          # README.md 파일을 초기화합니다.
+          echo "# 목차" > README.md
+
+          # 모든 readme-YYYY.md 파일을 확인하고 업데이트합니다.
+          for readme in readme-*.md
+          do
+            if [ -f "$readme" ]; then
+              echo "- [$readme]($readme)" >> README.md
+            fi
+          done
+
+      - name: Commit updated README.md
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add README.md
+          git commit -m "Update README with new readme-YYYY.md files"
+          git push
