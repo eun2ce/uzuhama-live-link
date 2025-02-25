@@ -1,5 +1,3 @@
-# 2021 년도 우주하마 생방송
-
 | Date       | Live Stream URL                                      |
 |------------|------------------------------------------------------|
 | 2021-12-31 | [https://www.youtube.com/watch?v=iPQqmcxVV_8](https://www.youtube.com/watch?v=iPQqmcxVV_8) |
