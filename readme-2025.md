@@ -26,4 +26,3 @@
 | 2025-01-07 | [https://www.youtube.com/watch?v=iIiuuyr7x8c](https://www.youtube.com/watch?v=iIiuuyr7x8c) |
 | 2025-01-06 | [https://www.youtube.com/watch?v=lJkldBuvvq0](https://www.youtube.com/watch?v=lJkldBuvvq0) |
 | 2025-01-05 | [https://www.youtube.com/watch?v=BmGlu6eoiPw](https://www.youtube.com/watch?v=BmGlu6eoiPw) |
-| 2025-02-25 | [https://www.youtube.com/watch?v=_XiJITyOH0M](https://www.youtube.com/watch?v=_XiJITyOH0M) |
