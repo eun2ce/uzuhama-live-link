@@ -1,5 +1,3 @@
-# 2020 년도 우주하마 생방송
-
 | Date       | Live Stream URL                                      |
 |------------|------------------------------------------------------|
 | 2020-12-31 | [https://www.youtube.com/watch?v=XdHgUVrDFa8](https://www.youtube.com/watch?v=XdHgUVrDFa8) |
