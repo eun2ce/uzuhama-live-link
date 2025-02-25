@@ -1,5 +1,3 @@
-# 2024 년도 우주하마 생방송
-
 | Date       | Live Stream URL                                      |
 |------------|------------------------------------------------------|
 | 2024-12-26 | [https://www.youtube.com/watch?v=dMCpVmyhdbw](https://www.youtube.com/watch?v=dMCpVmyhdbw) |
