@@ -6,15 +6,16 @@ API_KEY = os.getenv('YOUTUBE_API_KEY')
 CHANNEL_ID = os.getenv('YOUTUBE_CHANNEL_ID')
 URL = f'https://www.googleapis.com/youtube/v3/search?part=snippet&channelId={CHANNEL_ID}&eventType=live&type=video&key={API_KEY}'
 
-# Markdown 파일 경로
-markdown_file = "readme.md"
-
 # 현재 날짜와 시간을 포맷에 맞게 가져오기
 current_date = datetime.now().strftime('%Y-%m-%d')
+current_year = datetime.now().strftime('%Y')
+
+# 년도별 readme 파일 생성 (예: readme-2025.md)
+markdown_file = f"readme-{current_year}.md"
 
 response = requests.get(URL)
 data = response.json()
-print(f"data: {data}") 
+print(f"data: {data}")
 
 if 'items' in data and len(data['items']) > 0:
     video_id = data['items'][0]['id']['videoId']
@@ -22,13 +23,13 @@ if 'items' in data and len(data['items']) > 0:
     print(f"live_stream_url: {live_stream_url}")
 
     if data['items'][0]['snippet']['liveBroadcastContent'] == 'live':
-        # readme.md 파일이 없으면 생성 후 읽기
+        # readme 파일이 없으면 생성 후 읽기
         if not os.path.exists(markdown_file):
             with open(markdown_file, "w") as f:
-                f.write("| Date | Live Stream URL |\n")  # 테이블 헤더 변경
-                f.write("|------|------------------|\n")  # 구분선 변경
+                f.write("| Date       | Live Stream URL                                      |\n")  # 테이블 헤더 변경
+                f.write("|------------|------------------------------------------------------|\n")  # 구분선 변경
 
-        # readme.md 파일을 열고 내용을 읽어옴
+        # readme 파일을 열고 내용을 읽어옴
         with open(markdown_file, "r") as f:
             content = f.readlines()
 
