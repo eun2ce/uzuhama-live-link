@@ -3,7 +3,8 @@ name: Update README
 on:
   push:
     paths:
-      - 'readme-*.md'   # 새로운 readme-YYYY.md 파일이 추가될 때만 실행됩니다.
+      - 'readme-*.md'   # readme-YYYY.md 파일들이 추가되거나 수정될 때만 실행됩니다.
+  workflow_dispatch:   # 수동으로 워크플로우를 실행할 수 있도록 설정합니다.
 
 jobs:
   update-readme:
@@ -14,9 +15,6 @@ jobs:
 
       - name: Update README.md
         run: |
-          # 현재 연도를 가져옵니다.
-          current_year=$(date +'%Y')
-
           # README.md 파일을 초기화합니다.
           echo "# 목차" > README.md
 
