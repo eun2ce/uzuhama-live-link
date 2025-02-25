@@ -22,24 +22,28 @@ if 'items' in data and len(data['items']) > 0:
     print(f"live_stream_url: {live_stream_url}")
 
     if data['items'][0]['snippet']['liveBroadcastContent'] == 'live':
-        # readme 파일이 없으면 생성 후 읽기
+        # readme 파일이 없으면 생성 후 헤더 추가
         if not os.path.exists(markdown_file):
             with open(markdown_file, "w") as f:
-                f.write("| Date       | Live Stream URL                                      |\n")  # 테이블 헤더 변경
-                f.write("|------------|------------------------------------------------------|\n")  # 구분선 변경
+                f.write("| Date       | Live Stream URL                                      |\n")
+                f.write("|------------|------------------------------------------------------|\n")
 
-        # readme 파일을 열고 내용을 읽어옴
+        # readme 파일을 읽어서 기존 내용 가져오기
         with open(markdown_file, "r") as f:
             content = f.readlines()
 
-        # 기존 날짜에 동일한 URL이 있는지 확인
-        for line in content:
-            if line.strip() == f"| {current_date} | [{live_stream_url}]({live_stream_url}) |":
-                print("Live stream URL already exists for today. Skipping update.")
-                break
+        # 테이블 헤더(상위 2줄)를 유지한 상태에서 새로운 행 추가
+        header = content[:2]  # 헤더 2줄 유지
+        body = content[2:]  # 기존 내용
+
+        new_entry = f"| {current_date} | [{live_stream_url}]({live_stream_url}) |\n"
+
+        # 중복 체크 (기존 데이터에 이미 있는지 확인)
+        if new_entry in body:
+            print("Live stream URL already exists for today. Skipping update.")
         else:
-            # 새로운 항목을 테이블 형식으로 추가
-            with open(markdown_file, "a") as f:
-                f.write(f"| {current_date} | [{live_stream_url}]({live_stream_url}) |\n")
+            # 최신 라이브 스트림을 테이블의 가장 위에 추가
+            with open(markdown_file, "w") as f:
+                f.writelines(header + [new_entry] + body)
 else:
     print("No live stream currently.")
