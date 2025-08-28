@@ -1,5 +1,6 @@
 | Date       | Live Stream URL                                      |
 |------------|------------------------------------------------------|
+| 2025-08-28 | [https://www.youtube.com/watch?v=QMGbSAQS7aM](https://www.youtube.com/watch?v=QMGbSAQS7aM) |
 | 2025-08-27 | [https://www.youtube.com/watch?v=-7LrAnJN9fM](https://www.youtube.com/watch?v=-7LrAnJN9fM) |
 | 2025-08-26 | [https://www.youtube.com/watch?v=FB4ZNA_Iwzw](https://www.youtube.com/watch?v=FB4ZNA_Iwzw) |
 | 2025-08-22 | [https://www.youtube.com/watch?v=lAxDaOd-d3U](https://www.youtube.com/watch?v=lAxDaOd-d3U) |
