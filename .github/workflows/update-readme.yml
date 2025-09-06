@@ -3,30 +3,33 @@ name: Update README
 on:
   push:
     paths:
-      - 'readme-*.md'   # readme-YYYY.md가 수정될 때만
-  workflow_dispatch:
-
-permissions:
-  contents: write
+      - 'readme-*.md'   # readme-YYYY.md 파일들이 추가되거나 수정될 때만 실행됩니다.
+  workflow_dispatch:   # 수동으로 워크플로우를 실행할 수 있도록 설정합니다.
 
 jobs:
   update-readme:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
       - name: Update README.md
         run: |
+          # README.md 파일을 초기화합니다.
           echo "# 목차" > README.md
-          for readme in readme-*.md; do
-            [ -f "$readme" ] && echo "- [$readme]($readme)" >> README.md
+
+          # 모든 readme-YYYY.md 파일을 확인하고 업데이트합니다.
+          for readme in readme-*.md
+          do
+            if [ -f "$readme" ]; then
+              echo "- [$readme]($readme)" >> README.md
+            fi
           done
 
-      - name: Commit & push
+      - name: Commit updated README.md
         run: |
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
           git add README.md
-          git commit -m "chore: update README index" || echo "No changes"
+          git commit -m "Update README with new readme-YYYY.md files"
           git push
